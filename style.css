@@ -1,0 +1,72 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.gallery {
+    perspective: 1000px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.photos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+.photos img {
+    width: calc(100% - 20px);
+    height: 250px;
+    position: absolute;
+    transition: transform 0.5s;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
